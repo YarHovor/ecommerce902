@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,6 +27,14 @@ class DefaultController extends AbstractController
     /**
      * @Route("/product/{id}", name="product")
      */
+    public function product (Product $product)
+    {
+        return $this->render('default/product.html.twig', [
+            'product' => $product,
+        ]);
+    }
+
+    /*
     public function product($id, ProductRepository $productRepository)
     {
         $product = $productRepository->find($id);
@@ -37,5 +46,6 @@ class DefaultController extends AbstractController
             'product' => $product,
         ]);
     }
+     */
 
 }
