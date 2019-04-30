@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Товары</h1>
+
+    {% for category in products %}
+        <p>
+            <a href="{{ path('category', {'id' : category.id}) }}">{{ category.name }}</a>
+        </p>
+    {% endfor %}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

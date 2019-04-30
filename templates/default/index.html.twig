@@ -1,6 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <p>Товары</p>
+    {% for product in products %}
+
+        <p><a href="{{ path('product', {'id': product.id }) }}">{{ product.name }}</a> - {{ product.price / 100 }}</p>
+
+    {% endfor %}
+
+
+{% endblock %}
+
+{#
+{% extends 'base.html.twig' %}
+
+{% block body %}
     <h1>Товары</h1>
 
     <div class="row">
@@ -22,3 +36,4 @@
         {% endfor %}
     </div>
 {% endblock %}
+#}
