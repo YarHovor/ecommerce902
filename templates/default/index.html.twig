@@ -1,34 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>Товары</p>
-    {% for product in products %}
-
-        <p><a href="{{ path('product', {'id': product.id }) }}">{{ product.name }}</a> - {{ product.price / 100 }}</p>
-
-    {% endfor %}
-
-
-{% endblock %}
-
-{#
-{% extends 'base.html.twig' %}
-
-{% block body %}
     <h1>Товары</h1>
 
     <div class="row">
         {% for product in products %}
-            <div class="col-3">
+            <div class="col-md-6 col-lg-3">
                 <div class="card">
                     <img src="//placehold.it/200x150" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
-
                             <a href="{{ path('product', {'id': product.id}) }}">{{ product.name }}</a>
                         </h5>
                         <p class="card-text">{{ product.price / 100 }}</p>
-                        <p class="card-text">{{ product.descriprion }}</p>
+                        <p class="card-text">{{ product.description }}</p>
                         <a href="#" class="btn btn-primary">В корзину</a>
                     </div>
                 </div>
@@ -36,4 +21,3 @@
         {% endfor %}
     </div>
 {% endblock %}
-#}

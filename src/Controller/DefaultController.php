@@ -9,45 +9,27 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    // default - надо убрать типа стартовая страница
+
     /**
      * @Route("/", name="default")
      */
     public function index(ProductRepository $productRepository)
     {
-        $products = $productRepository->findAll();
+    	$products = $productRepository->findAll();
 
-        //var_dump($products);exit();
-
-        return $this->render('default/index.html.twig', [
+    	return $this->render('default/index.html.twig', [
             'products' => $products,
         ]);
     }
 
-    /**
-     * @Route("/product/{id}", name="product")
-     */
-    public function product($id, ProductRepository $productRepository)
-    {
-        $product = $productRepository->find($id);
-
-        if(!$product){
-            return $this->createNotFoundException('Product #' . $id . 'not found.');
-        }
-        return $this->render('default/product.html.twig', [
-            'product' => $product,
-        ]);
-    }
-
-
-    /*
-
-    public function product (Product $product)
-    {
-        return $this->render('default/product.html.twig', [
-            'product' => $product,
-        ]);
-    }
-     */
+	/**
+	 * @Route("/product/{id}", name="product")
+	 */
+    public function product(Product $product)
+	{
+		return $this->render('default/product.html.twig', [
+			'product' => $product,
+		]);
+	}
 
 }

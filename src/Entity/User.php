@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: skillup_student
- * Date: 30.04.19
- * Time: 19:27
- */
 
 namespace App\Entity;
 
@@ -17,16 +11,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	protected $id;
+
+	public function __construct()
+	{
+		parent::__construct();
+	}
+
 }
