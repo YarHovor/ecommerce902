@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class OrderController extends AbstractController
 {
     /**
-     * @Route("/order/add_to_cart/{id}", name="order_add_to_cart")
+     * @Route("/order/add-to-cart/{id}", name="order_add_to_cart")
      */
     public function addToCart(Product $product, OrdersService $ordersService, Request $request)
     {
