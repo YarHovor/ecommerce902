@@ -24,4 +24,21 @@ class OrderController extends AbstractController
         //и кидаем его жа ну страницу
         return $this->redirect($referer);
     }
+
+    /**
+     * @Route("/cart", name="order_cart")
+     */
+    public function cart(OrdersService $ordersService)
+    {
+        return $this->render('order/cart.html.twig', [
+            'order' => $ordersService->getOrderFromCart(),
+        ]);
+    }
+
+    public function headerCart(OrdersService $ordersService)
+    {
+        return $this->render('order/headerCart.html.twig', [
+            'order' => $ordersService->getOrderFromCart(),
+        ]);
+    }
 }
