@@ -17,6 +17,10 @@ class OrderController extends AbstractController
     {
         $ordersService->addToCart($product);
 
+        if ($request->isXmlHttpRequest()) {
+            return $this->headerCart($ordersService);
+        }
+
         //надо бросить пользователя туда где он тыклнул эту кнопку
 
         //береm ссылку на которой он был до этого, ссылкой типа

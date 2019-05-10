@@ -4,7 +4,7 @@
     <h1>Товары</h1>
 
     <div class="row">
-        {% for product in products %}
+      {#  {% for product in products %}
             <div class="col-md-6 col-lg-3">
                 <div class="card">
                     <img src="//placehold.it/200x150" class="card-img-top" alt="...">
@@ -15,10 +15,11 @@
                         <p class="card-text">{{ product.price / 100 }}</p>
                         <p class="card-text">{{ product.description }}</p>
                         <a href="{{ path('order_add_to_cart', {'id': product.id}) }}"
-                           class="btn btn-primary">В корзину</a>
+                           class="btn btn-primary js-add-to-cart">В корзину</a>
                     </div>
                 </div>
             </div>
-        {% endfor %}
+        {% endfor %}#}
+        {{ include('fragments/productsList.hrml.twig', {'products': products}) }}
     </div>
 {% endblock %}
