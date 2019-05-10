@@ -40,13 +40,12 @@ class Order
      * @ORM\Column(type="integer")
      */
     private $amount;
-
     /**
+     * @var OrderItem[]
+     *
      * @ORM\OneToMany(targetEntity="App\Entity\OrderItem", mappedBy="order", cascade={"persist"})
      */
     private $orderItems;
-
-
     public function __construct()
     {
         $this->createdAt = new \DateTime();
@@ -104,7 +103,6 @@ class Order
         $this->amount = $amount;
         return $this;
     }
-
     /**
      * @return Collection|OrderItem[]
      */
@@ -112,37 +110,33 @@ class Order
     {
         return $this->orderItems;
     }
-
     public function addOrderItem(OrderItem $orderItem): self
     {
-        if (!$this->orderItems->contains($orderItem)) {
+        if ( !$this->orderItems->contains($orderItem) ) {
             $this->orderItems[] = $orderItem;
             $orderItem->setOrder($this);
         }
-
+        $this->updateAmount();
         return $this;
     }
-
     public function removeOrderItem(OrderItem $orderItem): self
     {
-        if ($this->orderItems->contains($orderItem)) {
+        if ( $this->orderItems->contains($orderItem) ) {
             $this->orderItems->removeElement($orderItem);
             // set the owning side to null (unless already changed)
-            if ($orderItem->getOrder() === $this) {
+            if ( $orderItem->getOrder() === $this ) {
                 $orderItem->setOrder(null);
             }
         }
-
+        $this->updateAmount();
         return $this;
     }
-
     public function updateAmount()
     {
         $amount = 0;
-
-        foreach ($this->orderItems as $item)
-        {
-            $amount +=
+        foreach ($this->orderItems as $item) {
+            $amount += $item->getAmount();
         }
+        $this->setAmount($amount);
     }
 }
