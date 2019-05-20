@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6452795d924d7fe4bbc3603d1d18eab",
+    "content-hash": "66d2a60c361c5f81ca337f5b586e0d10",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1781,16 +1781,16 @@
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "2.0.x-dev",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipImagineBundle.git",
-                "reference": "647d51e0952a342a202deaa076b8f17ece44402e"
+                "reference": "1acae6ac066e431c3c55c4d39971827a02cbe4d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/647d51e0952a342a202deaa076b8f17ece44402e",
-                "reference": "647d51e0952a342a202deaa076b8f17ece44402e",
+                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/1acae6ac066e431c3c55c4d39971827a02cbe4d5",
+                "reference": "1acae6ac066e431c3c55c4d39971827a02cbe4d5",
                 "shasum": ""
             },
             "require": {
@@ -1877,7 +1877,7 @@
                 "symfony",
                 "transformation"
             ],
-            "time": "2019-03-30T17:55:16+00:00"
+            "time": "2018-07-10T12:53:54+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7746,9 +7746,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "liip/imagine-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
