@@ -33,6 +33,6 @@ $body.on('click', '.js-cart-delete', function (event) {
 function updateCart(data) {
     $('#cartTable').html(data);
 
-    let amount = $('orderAmount').html();
+    let amount = $('#orderAmount').html();
     $headerCart.html(amount);
 }
