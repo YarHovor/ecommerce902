@@ -1,11 +1,13 @@
 <?php
 namespace App\Service;
+
 use App\Entity\Order;
 use App\Entity\OrderItem;
 use App\Entity\Product;
 use App\Repository\OrderRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 class OrdersService
 {
     const CART_SESSION_KEY = 'cart';
@@ -52,5 +54,12 @@ class OrdersService
         $this->entityManager->flush();
         $this->session->set(self::CART_SESSION_KEY, $order->getId());
         return $order;
+    }
+    // метод который изменит к-во
+    public function setCount(OrderItem $orderItem, int $count): Order
+    {
+        $orderItem->setCount($count); // добавляем к-во
+        $this->entityManager->flush(); //сохраняем в БД
+        return $orderItem->getOrder(); //вернуть заказ
     }
 }
