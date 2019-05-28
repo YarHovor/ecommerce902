@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190515104540 extends AbstractMigration
+final class Version20190528163115 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,8 @@ final class Version20190515104540 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE category ADD image_name VARCHAR(255) DEFAULT NULL, ADD updated_at DATETIME DEFAULT NULL, ADD image_original_name VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE `order` ADD phone VARCHAR(255) DEFAULT NULL, ADD email VARCHAR(255) DEFAULT NULL, ADD address VARCHAR(500) DEFAULT NULL');
+        $this->addSql('ALTER TABLE site_user ADD phone VARCHAR(255) DEFAULT NULL, ADD address VARCHAR(500) DEFAULT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +31,7 @@ final class Version20190515104540 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE category DROP image_name, DROP updated_at, DROP image_original_name');
+        $this->addSql('ALTER TABLE `order` DROP phone, DROP email, DROP address');
+        $this->addSql('ALTER TABLE site_user DROP phone, DROP address');
     }
 }

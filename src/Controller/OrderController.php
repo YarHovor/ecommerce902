@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Order;
 use App\Entity\OrderItem;
 use App\Entity\Product;
+use App\Form\OrderType;
 use App\Service\OrdersService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -86,5 +87,22 @@ class OrderController extends AbstractController
         }
 
         return $this->redirectToRoute('order_cart');
+    }
+
+
+    /**
+     * @Route("/order/make", name="order_make_order")
+     */
+    public function makeOrder(OrdersService $ordersService, Request $form)
+    {
+        $order = $ordersService->getOrderFromCart();
+        $form = $this->createForm(OrderType::class, $order);
+
+
+        return $this->render('order/makeOrder.html.twig', [
+            'order' => $order,
+            'form' => $form,
+
+        ]);
     }
 }
