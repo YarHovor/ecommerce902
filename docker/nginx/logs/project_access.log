@@ -1,0 +1,5 @@
+172.18.0.1 - - [04/Jun/2019:17:30:36 +0000] "GET / HTTP/1.1" 499 0 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36"
+172.18.0.1 - - [04/Jun/2019:17:33:27 +0000] "GET / HTTP/1.1" 500 390904 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36"
+172.18.0.1 - - [04/Jun/2019:17:33:28 +0000] "GET /_wdt/14a561 HTTP/1.1" 200 32850 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36"
+172.18.0.1 - - [04/Jun/2019:17:45:52 +0000] "GET / HTTP/1.1" 500 390905 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36"
+172.18.0.1 - - [04/Jun/2019:17:45:53 +0000] "GET /_wdt/145285 HTTP/1.1" 200 32850 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36"
